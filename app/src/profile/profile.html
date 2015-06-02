@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<md-content flex layout-gt-sm="row" layout-align="center center">
+
+    <div class="md-whiteframe-z2" flex-gt-sm="40">
+        <md-toolbar class="md-accent" layout="row" layout-padding>
+            <h2>Sign-up</h2>
+        </md-toolbar>
+
+            <div layout layout-sm="column" >
+                <!-- Name -->
+                <md-input-container flex>
+                    <input type="text" name="surname"  placeholder={{profile.userProfile.name}}>
+                </md-input-container>
+
+                <!-- Surname -->
+                <md-input-container flex>
+                    <input type="text" name="name" placeholder={{profile.userProfile.surname}} flex/>
+                </md-input-container>
+            </div>
+
+            <div layout layout-sm="column">
+                <!-- Date of Birth -->
+                <div layout layout-align="center start" flex>
+                    <md-input-container flex>
+                        <label>Birth Date</label>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div flex>
+                <!-- SEX -->
+                <md-input-container flex>
+                    <input type="text" name="name" placeholder={{profile.userProfile.gender}} disabled flex/>
+                </md-input-container>
+            </div>
+
+    </div>
+</md-content>

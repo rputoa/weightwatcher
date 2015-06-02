@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<md-content flex layout-gt-sm="row" layout-align="center center">
+
+    <div class="md-whiteframe-z2" flex-gt-sm="40">
+        <md-toolbar class="md-accent" layout="row" layout-padding>
+            <h2>Sign-up</h2>
+        </md-toolbar>
+
+        <form name="registerForm" ng-submit="register.createUser(registerForm.$valid)" no-validate layout-padding>
+
+            <div layout layout-sm="column" >
+                <!-- Name -->
+                <md-input-container flex>
+                    <label>First Name</label>
+                    <input type="text" name="surname" ng-model="register.firstName" placeholder="First name" required autofocus/>
+                    <div ng-messages="registerForm.firstName.$error" ng-show="registerForm.surname.$dirty && !registerForm.surname.$valid">
+                        <div ng-message="required"> First Name is required</div>
+                    </div>
+                </md-input-container>
+
+                <!-- Surname -->
+                <md-input-container flex>
+                    <label>Last Name</label>
+                    <input type="text" name="name" ng-model="register.lastName" placeholder="Last name" flex required/>
+                    <div ng-messages="registerForm.lastName.$error" ng-show="registerForm.lastName.$dirty && !registerForm.lastName.$valid">
+                        <div ng-message="required"> Last Name is required</div>
+                    </div>
+                </md-input-container>
+            </div>
+
+            <div layout layout-sm="column">
+                <!-- Email -->
+                <md-input-container flex>
+                    <label>E-mail</label>
+                    <input type="email" ng-model="register.mail" placeholder="E-mail" required/>
+                    <div ng-messages="registerForm.mail.$error" ng-show="registerForm.mail.$dirty && !registerForm.mail.$valid">
+                        <div ng-message="required"> E-mail is required</div>
+                    </div>
+                </md-input-container>
+
+                <!-- Date of Birth -->
+                <div layout layout-align="center start" flex>
+                    <md-input-container flex>
+                        <label>Birth Date</label>
+                        <input type="date" ng-model="register.birthDate">
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout layout-sm="column" >
+                <!-- Password -->
+                <md-input-container flex>
+                    <label>Password</label>
+                    <input type="text" name="password" ng-model="register.password" minlength="4" placeholder="Password" required/>
+                    <div ng-messages="registerForm.password.$error" ng-show="registerForm.password.$dirty && !registerForm.password.$valid">
+                        <div ng-message="required"> Password is required</div>
+                        <div ng-message= "minlength"> Password is too short (min 4)</div>
+                    </div>
+                </md-input-container>
+
+                <!-- Confirm password -->
+                <md-input-container flex>
+                    <label>Confirm Password</label>
+                    <input type="text" name="confirmPassword"ng-model="register.confirmPassword" placeholder="Confirm password" flex required compare-to="register.password"/>
+                    <div ng-messages="registerForm.confirmPassword.$error" ng-show="registerForm.confirmPassword.$dirty && !registerForm.confirmPassword.$valid">
+                        <div ng-message="required"> Password verification is required</div>
+                    </div>
+                </md-input-container>
+            </div>
+
+            <div flex>
+                <label>Gender</label>
+                <md-radio-group layout="row" ng-model="register.gender" required>
+                    <md-radio-button value="1">Man</md-radio-button>
+                    <md-radio-button value="0">Woman</md-radio-button>
+                </md-radio-group>
+            </div>
+
+            <!-- Submit button -->
+            <div layout flex layout-align="end" layout-margin>
+                <md-button type="submit" class="md-raised  md-primary" ng-disabled="registerForm.$invalid" flex="40">Sign up</md-button>
+            </div>
+
+        </form>
+    </div>
+</md-content>

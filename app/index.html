@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Angular Material - Starter App</title>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
+        <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+        <link rel="stylesheet" href="./resources/bower_components/angular-material/angular-material.css"/>
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./resources/css/app.css"/>
+    </head>
+
+<body ng-app="app" layout="column" ng-controller="leftMenuController as leftMenuController">
+    <div flex layout="row">
+        <!-- Sidebar left -->
+        <md-sidenav md-component-id="sideNavLeft" md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2"
+                    ng-include='"src/shared/leftMenu/leftMenu.html"'>
+        </md-sidenav>
+
+        <!-- Div for sidebar and content -->
+        <div flex layout="column">
+            <!-- Toolbar -->
+            <md-toolbar layout="row">
+                <md-button class="menu" hide-gt-sm aria-label="Show menu" ng-click="leftMenuController.toggleMenu()">
+                    <md-icon md-svg-icon="menu"></md-icon>
+                </md-button>
+                <h1>Weight watcher</h1>
+            </md-toolbar>
+
+            <!-- Content -->
+            <md-content flex layout="column" layout-fill ui-view>
+
+            </md-content>
+        </div>
+    </div>
+
+    <!-- ADD SCRIPTS -->
+    <!-- Angular JS -->
+    <script src="./resources/bower_components/angular/angular.js"></script>
+    <!-- Ui-router -->
+    <script src="./resources/bower_components/ui-router/release/angular-ui-router.js"></script>
+    <!-- Angular Material Design -->
+    <script src="./resources/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="./resources/bower_components/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="./resources/bower_components/angular-material/angular-material.js"></script>
+    <script type="text/javascript" src="./resources/bower_components/angular-messages/angular-messages.min.js"></script>
+    <!-- Firebase -->
+    <script src="./resources/bower_components/firebase/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="./resources/bower_components/angularfire/dist/angularfire.min.js"></script>
+    <script type="text/javascript" src="./src/shared/model/model.js"></script>
+
+    <!-- Firebase Info -->
+    <script type="text/javascript" src="src/shared/firebaseInfo/firebaseInfo.js"></script>
+    <script type="text/javascript" src="src/shared/firebaseInfo/firebaseInfoService.js"></script>
+
+    <!-- Login Module -->
+    <script type="text/javascript" src="src/authentication/authentication.js"></script>
+    <script type="text/javascript" src="src/authentication/authenticationController.js"></script>
+    <script type="text/javascript" src="src/authentication/authenticationService.js"></script>
+
+    <!--Register Module -->
+    <script type="text/javascript" src="src/register/register.js"></script>
+    <script type="text/javascript" src="src/register/registerDirective.js"></script>
+    <script type="text/javascript" src="src/register/registerController.js"></script>
+    <script type="text/javascript" src="src/register/registerService.js"></script>
+
+    <script type="text/javascript" src="src/shared/leftMenu/leftMenu.js"></script>
+    <script type="text/javascript" src="src/shared/leftMenu/leftMenuService.js"></script>
+    <script type="text/javascript" src="src/shared/leftMenu/leftMenuController.js"></script>
+
+    <!-- Profile Module -->
+    <script type="text/javascript" src="src/profile/profile.js"></script>
+    <script type="text/javascript" src="src/profile/profileController.js"></script>
+    <script type="text/javascript" src="src/profile/profileService.js"></script>
+
+
+    <!-- App Module -->
+    <script type="text/javascript" src="src/app-modules.js"></script>
+    <script type="text/javascript" src="src/app-routes.js"></script>
+
+
+
+
+
+
+    </body>
+</html>
